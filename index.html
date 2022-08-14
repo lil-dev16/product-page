@@ -7,42 +7,52 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-  
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
 
     <!--HEADER-->
     <div class="header">
-      <nav class="cover">
-      
-        <h3>SNEAKERS</h3>
-        
-        <div class="nav__link">
+      <div class="cover">
+          <div class="left_nav">
+            <div class="nav_bar">
+              <div class="bar" id="bar">
+                
+              </div>
+          </div>
+          <h3>SNEAKERS</h3>
+          
+        <div class="nav__link" id = "nav__link">
           <ul>
-            <li>Collections</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li >
+              <a href= '#' class="active">Collections</a>
+            </li>
+            <li>
+              <a href= '#'>Men</a>
+            </li>
+            <li>
+              <a href= '#'>Women</a>
+            </li>
+            <li>
+              <a href= '#'>About</a>
+            </li>
+            <li>
+              <a href= '#'>Contact</a>
+            </li>
           </ul> 
         </div>
-
-        <div class="profile-sec">
-          <img src="./images/icon-cart.svg" alt="">
-          <img src="./images/image-avatar.png" alt="">
         </div>
-
-        <div class="nav_bar">
-          <div class="bar">
-            
-          </div>
+         <div class="profile-sec">
+          <img src="./images/icon-cart.svg" alt="cart" class="">
+          <img src="./images/image-avatar.png" alt="profile" width="50px" class="prof">
         </div>
-      </nav>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <img src="./images/image-product-1.jpg" alt="">
     </div>
   </div>
 
@@ -69,7 +79,6 @@
 
   0
   Add to cart -->
-  
-
+  <script src="./script.js"></script>
 </body>
 </html>
