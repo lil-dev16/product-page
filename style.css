@@ -138,8 +138,11 @@ body{
 
 /*MAIN*/
 .img-sec .product{
-    
     width: 100%;
+    transition: 5s linear;
+}
+.prod{
+    transition: 5s;
 }
 .img-sec{
     position: relative;
@@ -299,12 +302,17 @@ body{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .thumbnails img{
+    .thumb-img{
         border-radius: var(--mb-2);
         /* scale: 70%; */
         width: 100px;
         height: 100px;
         cursor: pointer;
+    }
+    .thumb-img:hover {
+    }
+    .thumb-img.select{
+        border: 3px solid var(--main-color);
     }
     .img-sec{
         display: grid;
