@@ -17,7 +17,7 @@ const images = [
     './images/image-product-3.jpg',
     './images/image-product-4.jpg'
 ]
-
+//array for thumbnails switch
 const imgMatch = [
     {
         id: 1,
@@ -25,18 +25,18 @@ const imgMatch = [
     },
     {
         id: 2,
-        sor: './images/image-product-1.jpg'
+        sor: './images/image-product-2.jpg'
     },
     {
         id: 3,
-        sor: './images/image-product-1.jpg'
+        sor: './images/image-product-3.jpg'
     },
         {
         id: 4,
-        sor: './images/image-product-1.jpg'
+        sor: './images/image-product-4.jpg'
     }
 ]
-
+//buttons
 let target= 0;
 const showImg = (index) => {
     product.src = images[index];
@@ -63,7 +63,6 @@ prevBtn.addEventListener('click', ()=> {
 //thumbnails sec
 const thumbnails = document.querySelectorAll('.thumb-img');
 function thumbAction() {
-    product.src= imgMatch[1].sor;
     thumbnails.forEach(thumb=> {
         thumb.classList.remove('select')
         this.classList.add('select')
@@ -73,4 +72,27 @@ function thumbAction() {
 
 thumbnails.forEach(thumb=>{
     thumb.addEventListener('click', thumbAction)
+})
+
+thumbnails.forEach(element => {
+    element.addEventListener('click', (e)=>{
+        console.log('working');
+        let id = e.target.dataset.id;
+        // console.log(num);
+        let blah = imgMatch.map((elem)=>{
+            const num = elem.id;
+            if(id == num) {
+                return `${elem.sor}`
+            }
+        })
+        blah = blah.join('');
+        product.src = blah
+        console.log(blah);
+    })
+});
+
+//LARGE IMAGE CLICK
+const modal = document.querySelector('.modal-container');
+product.addEventListener('click', ()=>{
+    modal.classList.add('show');
 })
