@@ -45,6 +45,11 @@
         </div>
          <div class="profile-sec">
           <img src="./images/icon-cart.svg" alt="cart" class="cart">
+          <div class="cart-info">
+            <h3>Cart</h3>
+            <hr>
+            <p>Your cart is empty.</p>
+          </div>
           <img src="./images/image-avatar.png" alt="profile" width="50px" class="prof">
         </div>
       </div>
@@ -57,7 +62,7 @@
         <div class="prod">
           <img src="./images/image-product-1.jpg" alt="product image"  class='product'>
         </div>
-        
+    
         <img src="./images/icon-previous.svg" alt="previous" class="previous">
         <img src="./images/icon-next.svg" alt="next" class="next">
         <div class="thumbnails">
@@ -70,14 +75,14 @@
 
       <div class="text-sec">
         <h4>SNEAKER COMPANY</h4>
-        <h1>Fall Limited Edition Sneakers</h1>
+        <h1 id="tit">Fall Limited Edition Sneakers</h1>
         <p>
           These low-profile sneakers are your perfect casual wear companion. Featuring a 
   durable rubber outer sole, they’ll withstand everything the weather can offer.
         </p>
         <div class="price">
           <div class="sec1">
-            <h2>  $125.00</h2>
+            <h2 id="price" >  $125.00</h2>
             <p class="discount">
             50%
             </p>
@@ -87,30 +92,34 @@
         </div>
         <div class="purchase">
           <div class="addtocart">
-            <img src="./images/icon-minus.svg" alt="add one item">
-            <h3>0</h3>
-            <img src="./images/icon-plus.svg" alt="remove one item">
+            <img src="./images/icon-minus.svg" alt="add one item" class="minus">
+            <h3 class="num">0</h3>
+            <img src="./images/icon-plus.svg" alt="remove one item" class="plus">
            
           </div>
-          <div class="order">
-            <img src="./images/icon-cart.svg" alt="cart-icon" >
-            <h3>Add to cart</h3>
-          </div>
+          
+            <button class="order">
+              <img src="./images/icon-cart.svg" alt="cart-icon" >
+              <h3>Add to cart</h3>
+            </button>
         </div>
         </div>
         
         <div class="modal-container">
           <div class="modal">
   
-            <img src="./images/icon-close.svg" alt="close modal">
-            <img src="./images/image-product-1.jpg" alt="product" class="pro product">
-            <img src="./images/icon-previous.svg" alt="prev">
-            <img src="./images/icon-next.svg" alt="next">
+            <img src="./images/icon-close.svg" alt="close modal" class="closee" >
+            <div class="dis">
+
+              <img src="./images/image-product-1.jpg" alt="product" class="pro product">
+              <img src="./images/icon-previous.svg" alt="prev" class="pre">
+              <img src="./images/icon-next.svg" alt="next" class="nex">
+            </div>
             <div class="thumbnais">
-              <img src="./images/image-product-1-thumbnail.jpg" alt="product1" class = "thumb-img thum" data-id="1">
-            <img src="./images/image-product-2-thumbnail.jpg" alt="product2" class = "thumb-img thum" data-id="2">
-            <img src="./images/image-product-3-thumbnail.jpg" alt="product3" class = "thumb-img thum" data-id="3">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="product4" class = "thumb-img thum" data-id="4">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="product1" class = " thum" data-id="1">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="product2" class = "thum" data-id="2">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="product3" class = "thum" data-id="3">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="product4" class = " thum" data-id="4">
           </div>
           </div>
         </div>
