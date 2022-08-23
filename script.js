@@ -192,27 +192,46 @@ const items = []
 
 ///ORDER BTN CLICK
 const addToCart = () => {
-    items.push({pic: product.src, ty:title.textContent, pr: price.textContent});
-    let output = items.map(item=> {
-        return `<div>
-        <div>
-        <img src = ${item.pic} class="tre">
-        <h3>${item.ty}</h3>
-        <p>${item.pr}</p>
-        </div>
-        <button>Checkout</button>
-        </div>`
-    })
-    console.log(items);
-    output = output.join('');
-    cartInfo.innerHTML = output;
-    console.log(output);
+    if (targetNum == 0) {
+        return
+    }else{
+
+        items.push({pic: product.src, ty:title.textContent, pr: price.textContent, id:Number(items.length), no:targetNum});
+        let output = items.map(item=> {
+            return `
+            <div class="itemI">
+            <img src = ${item.pic} class="tre">
+            <div class="cart-text">
+            <p>${item.ty}</p>
+            <p>${item.pr} * ${item.no} $${125*item.no}</p>
+                </div>
+                <div class = "del">
+                <img src = './images/icon-delete.svg' >
+                </div>
+                </div>`
+        })
+        console.log(items);
+        output = output.join('');
+        cont.innerHTML = output;
+        console.log(output);
+    }
+
+    //DELETE ITEM FROM CART
+    const deleteIcon = document.querySelectorAll('.del');
+    deleteIcon.forEach(element => {
+        element.addEventListener('click', (e)=> {
+            const pare = e.currentTarget.parentElement;
+            console.log(pare);
+            cont.removeChild(pare);
+        })
+    });
 }
 
 orderBtn.addEventListener('click', addToCart);
 
 const cart1 = document.querySelector('.cart');
 const cartInfo = document.querySelector('.cart-info');
+const cont = document.querySelector('.items');
 cart1.addEventListener('click', ()=>{
 cartInfo.classList.toggle('sho')
 })
