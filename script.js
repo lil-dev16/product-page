@@ -184,7 +184,8 @@ changeText();
 
 minusBtn.addEventListener('click', ()=> {
 targetNum--;
-changeText();
+targetNum < 0 ? targetNum = 0 : changeText();
+
 });
 
 //array
@@ -192,12 +193,17 @@ const items = []
 
 const juu1 = document.querySelector('.numc');
 const juu =document.querySelector('.pr');
+const emp = document.getElementById('empty');
+const buy = document.querySelector('.buy');
 ///ORDER BTN CLICK
 const addToCart = () => {
-    if (targetNum == 0) {
+    if (targetNum <= 0) {
+        emp.style.display = 'block';
+        buy.style.display = 'none';
         return
     }else{
-
+        emp.style.display = 'none';
+        buy.style.display = 'block';
         // items.push({pic: product.src, ty:title.textContent, pr: price.textContent, id:Number(items.length), no:targetNum});
         // let output = items.map(item=> {
         //     return `
@@ -233,24 +239,34 @@ const addToCart = () => {
             <img src = './images/icon-delete.svg' >
             </div>`
     }
-
+   
+    let tru = document.querySelectorAll('.itemI');
     //DELETE ITEM FROM CART
     const deleteIcon = document.querySelectorAll('.del');
     deleteIcon.forEach(element => {
         element.addEventListener('click', (e)=> {
             const pare = e.currentTarget.parentElement;
             cont.removeChild(pare);
+            tru = document.querySelectorAll('.itemI');
+            cartNom();
         })
     });
 
-    //small orange thingy
-    if(element.length == 0){
+//small orange thingy
+const cartNom = () => {
+    if(tru.length == 0){
         juu1.style.display = "none";
+        emp.style.display = 'block';
+        buy.style.display = 'none';
     }else{
         juu1.style.display = "block";
-        juu.textContent = items.length;
+        juu.textContent = tru.length;
     }
 }
+cartNom();
+}
+
+    
 
 orderBtn.addEventListener('click', addToCart);
 

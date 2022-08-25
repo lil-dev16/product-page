@@ -195,7 +195,6 @@ body{
 /*MAIN*/
 .img-sec .product{
     width: 100%;
-    transition: 2s ;
 }
 .product:hover{
     transform: scale(110%);
@@ -281,6 +280,7 @@ body{
     border: none;
     box-shadow: 0 16px 9px var(--pale-color);
     cursor: pointer;
+    width: 100%;
 }
 .order img{
     filter: brightness(11);
@@ -288,6 +288,21 @@ body{
 }
 .thumbnails{
     display: none;
+}
+.emp{
+    color: var(--first-color);
+}
+.buy{
+    display: none;
+    border: none;
+    font-weight: 700;
+    width: 100%;
+    padding: var(--mb-2);
+    margin-top: var(--mb-2);
+    border-radius: var(--mb-2);
+    background-color: var(--main-color);
+    color: var(--white-color);
+    cursor: pointer;
 }
 @media screen and (max-width: 768px){
     .nav__link{
@@ -437,4 +452,13 @@ body{
     .dis{
         position: relative;
     }
+    .cart-info{
+    left: auto;
+    right: 20px;
+    width: 25rem;
+    margin: 0;
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;;
+}
+
 }
