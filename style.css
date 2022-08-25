@@ -146,7 +146,7 @@ body{
     background-color: white;
     width: 90%;
     margin: auto;
-    border-radius: var(--mb-2);
+    border-radius: .5rem;
     transition: .5s;
 }
 .cart-info h3{
@@ -175,6 +175,22 @@ body{
 .items{
     display: grid;
     grid-gap: var(--mb-2);
+}
+.numc{
+    width: 16px;
+    position: absolute;
+    top: 01rem;
+    right: 5.3rem;
+    border-radius: 4px;
+    height: 10px;
+    background-color: var(--main-color);
+    display: none;
+}
+.pr{
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--white-color);
+    text-align: center;
 }
 /*MAIN*/
 .img-sec .product{

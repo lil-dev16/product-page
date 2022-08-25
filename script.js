@@ -190,30 +190,48 @@ changeText();
 //array
 const items = []
 
+const juu1 = document.querySelector('.numc');
+const juu =document.querySelector('.pr');
 ///ORDER BTN CLICK
 const addToCart = () => {
     if (targetNum == 0) {
         return
     }else{
 
-        items.push({pic: product.src, ty:title.textContent, pr: price.textContent, id:Number(items.length), no:targetNum});
-        let output = items.map(item=> {
-            return `
-            <div class="itemI">
-            <img src = ${item.pic} class="tre">
-            <div class="cart-text">
-            <p>${item.ty}</p>
-            <p>${item.pr} * ${item.no} $${125*item.no}</p>
-                </div>
-                <div class = "del">
-                <img src = './images/icon-delete.svg' >
-                </div>
-                </div>`
-        })
-        console.log(items);
-        output = output.join('');
-        cont.innerHTML = output;
-        console.log(output);
+        // items.push({pic: product.src, ty:title.textContent, pr: price.textContent, id:Number(items.length), no:targetNum});
+        // let output = items.map(item=> {
+        //     return `
+        //     <div class="itemI">
+        //     <img src = ${item.pic} class="tre">
+        //     <div class="cart-text">
+        //     <p>${item.ty}</p>
+        //     <p>${item.pr} * ${item.no} $${125*item.no}</p>
+        //         </div>
+        //         <div class = "del">
+        //         <img src = './images/icon-delete.svg' id=${id}>
+        //         </div>
+        //         </div>`
+        // })
+        // console.log(items);
+        // output = output.join('');
+        // cont.innerHTML = output;
+        // console.log(output);
+        const id = new Date().getTime().toString();
+        const element = document.createElement('div');
+        element.classList.add('itemI');
+        const attr = document.createAttribute('data-id');
+        attr.value = id;
+        element.setAttributeNode(attr);
+        cont.appendChild(element);
+        element.innerHTML = `
+        <img src = ${product.src} class="tre">
+          <div class="cart-text">
+        <p>Fall Limited Edition Sneakers</p>
+           <p>${price.textContent} * ${targetNum} $${125*targetNum}</p>
+            </div>
+            <div class = "del">
+            <img src = './images/icon-delete.svg' >
+            </div>`
     }
 
     //DELETE ITEM FROM CART
@@ -221,10 +239,17 @@ const addToCart = () => {
     deleteIcon.forEach(element => {
         element.addEventListener('click', (e)=> {
             const pare = e.currentTarget.parentElement;
-            console.log(pare);
             cont.removeChild(pare);
         })
     });
+
+    //small orange thingy
+    if(element.length == 0){
+        juu1.style.display = "none";
+    }else{
+        juu1.style.display = "block";
+        juu.textContent = items.length;
+    }
 }
 
 orderBtn.addEventListener('click', addToCart);
@@ -235,3 +260,6 @@ const cont = document.querySelector('.items');
 cart1.addEventListener('click', ()=>{
 cartInfo.classList.toggle('sho')
 })
+
+//
+
